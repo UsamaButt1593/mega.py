@@ -746,17 +746,22 @@ class Mega:
             shutil.move(temp_output_file.name, output_path)
             return output_path
 
-    def upload_bytes(self, url, headers, dest_filename, dest=None):
+    def upload_url(self, url, dest_filename, dest=None, headers=None,chunk_size=10485760 ):
 
         if dest is None:
             # if none set, upload to cloud drive node
             if not hasattr(self, 'root_id'):
                 self.get_files()
             dest = self.root_id
-
-        response = requests.get(url, headers=headers, stream=True)
-        response.raw.decode_content = True
-        input_file = io.TextIOWrapper(io.BytesIO(response.content))
+       
+        response = b""
+        with requests.get(url, headers=headers, stream=True) as r:
+          for chunk in r.iter_content(chunk_size=chunk_size,decode_unicode=True):
+            response = response + chunk
+            
+          
+        # response.raw.decode_content = True
+        input_file = io.TextIOWrapper(io.BytesIO(response))
         input_file.seek(0, 2)
 
         file_size = input_file.tell()
