@@ -99,7 +99,7 @@ m.get_upload_link(file)
 ```python
 file = m.upload_url('https://examplesite.com/example.zip', 'destination file name.zip')
 m.get_upload_link(file)
-# you can add custom headers to the request using ##headers param
+# you can add custom headers to the request using headers param
 # see mega.py for headers, chunk_size, and destination options
 ```
 upload_url(self, url, dest_filename, dest=None, headers=None,chunk_size=10485760 )
