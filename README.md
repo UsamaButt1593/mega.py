@@ -8,6 +8,38 @@ Learn how to use it: https://github.com/meganz/MEGAcmd/blob/master/UserGuide.md
 ----
 
 
+Have a Look
+===========
+
+There is now an official programmable solution from Mega.nz itself but it has some limitations.
+
+### Not able to directly upload a file by its url
+Can be fixed by a vps with disk space
+
+### Encrypts/Decrypts before uploading/downloading files
+This can pose a lot of problems e.g. 
+- On web, we can only provide mega links (no direct download link) for downloads which copyright holders can exploit to get our data removed from Mega.nz
+- On android, it is very challenging to play Mega.nz links in any video player because they need live decryption which in theory can be done by copying how megatools does it but in practical very difficult and time consuming to achieve
+
+## Alternatives
+### [Megatools](https://megatools.megous.com/)
+We can change this library to disable encryption/decryption. Just remove/comment blocks at [line#3357](https://megous.com/git/megatools/tree/lib/mega.c#n3357) and [line#4274](https://megous.com/git/megatools/tree/lib/mega.c#n4274) in file [lib/mega.c](https://megous.com/git/megatools/tree/lib/mega.c).
+
+We can also implement upload by url using downloading mechanism used by this library.
+
+### [mega_scripts](https://github.com/Amourspirit/mega_scripts)
+Provides code to keep mega accounts alive which are by default disabled after 3 months of inactivity.
+
+Also provides code to create unlimited mega accounts without even using legit email accounts using guerrillamail api.
+
+### [mega_scripts](https://github.com/Amourspirit/mega_scripts)
+Does some iseful things using bash and megatools
+
+### [mega_scripts](https://greasyfork.org/en/scripts/by-site/mega.nz)
+Have not looked at it but it claims to bypass 20GB account storage limit.
+  
+
+
 Mega.py
 =======
 
