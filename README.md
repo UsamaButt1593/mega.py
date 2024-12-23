@@ -37,6 +37,9 @@ Does some iseful things using bash and megatools
 
 ### [mega_scripts](https://greasyfork.org/en/scripts/by-site/mega.nz)
 Have not looked at it but it claims to bypass 20GB account storage limit.
+
+### Indishare
+Not exactly an alternative but can be used in conjuction with mega as a **_caching layer_**
   
 
 
