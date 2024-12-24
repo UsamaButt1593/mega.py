@@ -27,6 +27,8 @@ We can change this library to disable encryption/decryption. Just remove/comment
 
 We can also implement upload by url using downloading mechanism used by this library.
 
+See it yourself [here](https://github.com/UsamaButt1593/megatools)
+
 ### [mega_scripts](https://github.com/Amourspirit/mega_scripts)
 Provides code to keep mega accounts alive which are by default disabled after 3 months of inactivity.
 
